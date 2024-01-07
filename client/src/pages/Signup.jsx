@@ -1,12 +1,12 @@
-// import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Signup() {
 
   const [formData, setFormData] = useState({})
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleChange = async (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value })
@@ -31,6 +31,7 @@ export default function Signup() {
         return
       }
       setError(false)
+      navigate('/sign-in')
       
     } catch (error) {
       setLoading(false)
