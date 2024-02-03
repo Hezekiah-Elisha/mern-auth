@@ -16,11 +16,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="*" element={<h1>Not Found</h1>} />  {/* 404 page */}
-        <Route path="/sign-in" element={ <Signin /> } />
         <Route path="/sign-up" element={ <Signup /> } />
         <Route element={ <PrivateRoute/>}>
           <Route path="/profile" element={ <Profile /> } />
         </Route>
+        <Route path="/sign-in" element={ <Signin /> } />
       </Routes>
     </BrowserRouter>
     // <h1>App</h1>
